@@ -1,0 +1,95 @@
+<div class="section" id="input">
+    <h2>Inputs</h2>
+    <div class="row">
+        <form [formGroup]="form">
+            <zip-input
+                label="Label"
+                placeholder="Enter text here"
+                hint="assistant text"
+                [formControl]="form.controls.field"
+                [errorMessages]="{
+                    required: error
+                }"
+                (linkClicked)="openLink($event)">
+            </zip-input>
+        </form>
+    </div>
+    <div class="row">
+        <zip-input
+            label="Label"
+            placeholder="Enter text here"
+            hint="assistant text">
+        </zip-input>
+    </div>
+    <div class="row">
+        <form [formGroup]="form">
+            <zip-input
+                label="Disabled"
+                placeholder="Disabled"
+                [formControl]="disabledForm.controls.field"
+                hint="Disabled">
+            </zip-input>
+        </form>
+    </div>
+    <div class="row">
+        <form [formGroup]="preFilled">
+            <zip-input
+                label="PreFilled"
+                placeholder="PreFilled"
+                [formControl]="preFilled.controls.field"
+                value="Pre filled text"
+                hint="This form has been pre-filled">
+            </zip-input>
+        </form> 
+    </div>
+</div>
+
+<div class="section" id="select">
+    <h2>Select</h2>
+    <div class="row">
+        <zip-select
+            label="Branches"
+            [items]=items
+            placeholder="Select a branch"
+            (selectChange)="onSelect($event)">
+        </zip-select>
+    </div>
+    <div class="row">
+        <zip-select
+            label="Branches"
+            [items]=items
+            placeholder="Select a branch"
+            (selectChange)="onSelect($event)"
+            disabled=true>
+        </zip-select>
+    </div>
+    <div class="row">
+        <zip-select
+            label="Branches"
+            [items]=items
+            placeholder="Select a branch"
+            [formControl]="selectForm.controls.required"
+            [errorMessages]="{
+                required: selectError
+            }"
+            (selectChange)="onSelect($event)">
+        </zip-select>
+    </div>
+</div>
+
+<div class="section" id="radio">
+    <h2>Radio Button</h2>
+    <div class="row">
+        <zip-radio-button
+            label="Do you agree?">
+        </zip-radio-button>
+    </div>
+    <div class="row">
+        <form [formGroup]="radio">
+            <zip-radio-button
+                label="Label"
+                [formControl]="radio.controls.field">
+            </zip-radio-button>
+        </form>
+    </div>
+</div>

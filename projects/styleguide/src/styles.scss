@@ -1,0 +1,25 @@
+
+@import url('https://fonts.googleapis.com/css?family=Rubik:300,400,500,600,700&display=swap');
+
+@import 'theme.scss';
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+    background-color: #f8fafb;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Rubik, "Helvetica Neue", sans-serif; color: $zip-navy;}
+
+.zip-content {
+    max-width: 400px;
+    width: 100%;
+    margin: 60px auto auto;
+    padding: 0 20px;
+
+    @media only screen and (min-width: 414){
+        max-width: 500px;
+    }
+}

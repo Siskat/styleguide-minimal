@@ -1,0 +1,22 @@
+::ng-deep .mat-select-panel {
+    margin-top: 35px;
+    padding-top: 8px !important;
+    width: 100% !important;
+}
+
+::ng-deep .mat-option.mat-active {
+    background-color: rgba(28, 112, 242, 0.1) !important;
+}
+
+::ng-deep .mat-form-field.mat-focused.mat-primary .mat-select-arrow {
+    transform: rotate(225deg) !important;
+    margin-top: 7px !important;
+}
+
+::ng-deep .mat-form-field .mat-select.mat-select-invalid .mat-select-arrow {
+    color: #b00020 !important;
+}
+  
+::ng-deep .mat-form-field .mat-select.mat-select-disabled .mat-select-arrow {
+    color: #e8e8ec !important;
+}

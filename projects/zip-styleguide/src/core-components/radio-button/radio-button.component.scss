@@ -1,0 +1,26 @@
+::ng-deep .mat-radio-label-content {
+    padding-left: 16px !important;
+}
+
+::ng-deep .mat-radio-outer-circle {
+    width: 21px !important;
+    height: 21px !important;
+    border: solid 1px #c6c6c6 !important;
+}
+
+::ng-deep .mat-radio-button .mat-radio-ripple {
+    height: 45px !important;
+    width: 45px !important;
+    left: calc(50% - 22px) !important;
+    top: calc(50% - 22px) !important;
+}
+
+::ng-deep .mat-radio-label-content {
+    font-size: 15px;
+    line-height: 21px;
+}
+
+::ng-deep .mat-radio-inner-circle {
+    height: 21px !important;
+    width: 21px !important;
+}

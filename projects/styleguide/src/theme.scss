@@ -1,0 +1,207 @@
+@import '~@angular/material/theming';
+
+/*! autoprefixer grid: on */
+
+$space: 0.5rem;
+
+$zip-navy: #21285e;
+$grey-medium: #6e7396;
+$light-grey-1: #a5abc1;
+$light-grey-2: #dddde3;
+$light-grey-3: #f2f2f2;
+$navy-medium: #424876;
+$error-red: #b00020;
+$blue: #1c70f2;
+$blue-hover: #1659c1;
+$turquoise: #00afb8;
+$spinner: #e8e8ec;
+$input-text: #21285e;
+$disabled: #1c70f2;
+
+@mixin gridItem($start, $span) {
+  grid-column-start: $start;
+  grid-column-end: $start + $span;
+}
+
+// Plus imports for other components in your app.
+
+$mat-custom-primary: (
+        500: #1c70f2,
+);
+
+$mat-custom-red: (
+        500: $error-red,
+);
+
+$mat-custom-theme-foreground: (
+        divider: #a5abc1,
+        dividers: #a5abc1,
+);
+
+$custom-typography: mat-typography-config(
+        $font-family: 'Rubik, san-serif'
+);
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core($custom-typography);
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$custom-primary: mat-palette(map-merge($mat-indigo, $mat-custom-primary));
+$custom-accent: mat-palette($mat-pink, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$custom-warn: mat-palette(map-merge($mat-red, $mat-custom-red));
+
+// Create the theme object (a Sass map containing all of the palettes).
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme(
+                (
+                        primary: $custom-primary,
+                        accent: $custom-primary,
+                        warn: $custom-warn,
+                        is-dark: false,
+                        foreground: map-merge($mat-light-theme-foreground, $mat-custom-theme-foreground),
+                        background: $mat-light-theme-background,
+                )
+);
+
+.mat-form-field:not(.mat-focused .mat-form-field-invalid) {
+  .mat-form-field-flex:hover {   
+    .mat-form-field-outline {
+      color:#a5abc1;
+      .mat-form-field-outline-start,
+      .mat-form-field-outline-gap,
+      .mat-form-field-outline-end {
+        border-width: 1px;       
+      }
+    }
+  }
+}
+
+.mat-form-field-flex {
+  padding: 0 16px 0 16px !important;
+}
+
+.mat-form-field-appearance-outline.mat-form-field-disabled .mat-form-field-outline {
+  color: #e8e8ec;
+}
+
+.mat-form-field-appearance-outline.mat-form-field-disabled .mat-form-field-label {
+  color: #a5abc1;
+}
+
+.mat-form-field-appearance-outline {
+  .mat-form-field-outline {
+    color: #dddde3;    
+    height: 56px;
+    top: auto !important;
+  }
+
+  .mat-form-field-outline-thick {
+    .mat-form-field-outline-start,
+    .mat-form-field-outline-end,
+    .mat-form-field-outline-gap {
+      border-width: 1px;
+    }
+  }
+}
+
+.mat-form-field-appearance-outline .mat-form-field-infix {
+  padding: 0.8em 0 1em 0;
+}
+
+.mat-form-field {
+  width: 100%;
+}
+
+.mat-form-field-appearance-outline .mat-form-field-suffix {
+  position: absolute;
+  top: 20px !important;
+  right: 12px;
+}
+
+.mat-form-field-wrapper {
+  margin: $space * 0.5 0 0 0 !important;
+  padding-bottom: $space * 2.5;
+}
+
+.mat-form-field-label {
+  color: $grey-medium;
+
+}
+
+.mat-select-arrow:not(.mat-select-disabled) {
+  width: 7px !important;
+  height: 7px !important;
+  border-left: none !important;
+  border-top: none !important;
+  border-right: 1.5px solid !important;
+  border-bottom: 1.5px solid !important;
+  transform: rotate(45deg) !important;
+  margin: 0 4px !important;
+  color: #a5abc1 !important;
+}
+
+.mat-option-text {
+  color: $zip-navy;
+}
+
+.mat-select-value {
+  color: $zip-navy;
+}
+
+.mat-hint {
+  color: $grey-medium;
+  font-size: 12px;
+}
+
+.mat-form-field-disabled .mat-hint {
+  color: $light-grey-1;
+}
+
+.mat-dialog-container {
+  .mat-dialog-actions {
+    justify-content: flex-end;
+    padding: 16px 0 0 0;
+  }
+
+  padding: 20px 48px 48px !important;
+}
+
+input.mat-input-element {
+  color: $input-text;
+}
+
+input.mat-input-element::placeholder {
+  color: #6e7396;
+  opacity: 0.3;
+}
+
+div.mat-form-field-subscript-wrapper {
+  position: static;
+  font-size: 12px;
+  margin-top:4px;
+}
+
+.small-modal-container {
+  .mat-dialog-container {
+    max-width: 340px;
+    padding: 25px !important;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .full-dialog-container.cdk-overlay-pane {
+    max-width: 100% !important;
+  }
+  .cdk-global-overlay-wrapper {
+    align-items: normal !important;
+  }
+}
